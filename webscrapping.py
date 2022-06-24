@@ -1,5 +1,8 @@
+import time
 from datetime import date, datetime
-import pandas as pd 
+import pandas as pd
+import numpy as np
+import requests
 from selenium import webdriver
 from selenium.common.exceptions import WebDriverException
 from selenium.common.exceptions import TimeoutException
@@ -9,6 +12,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
 from io import StringIO
 import boto3
+import mibian
 
 
 def main():
@@ -20,9 +24,11 @@ def main():
 
     tabla_df = creacion_tabla_datos(datos, futuros)
 
-    bucket_name = "volatility-miax-8-practica-4-nacho-amo"
-    escribir_s3(tabla_df, bucket_name)
+    driver.close()
+    tabla_df["volatilidad"] = tabla_df.apply(calcular_vola_implicita, axis = 1)
 
+    bucket_name = "volatility-miax-8-practica-4-nacho-amo"
+    escribir_s3(tabla_df, bucket_name)    
 
 
 
@@ -138,6 +144,6 @@ def escribir_s3(dataframe, bucket_name):
     csv_buffer = StringIO()
     dataframe.to_csv(csv_buffer)
     s3_resource = boto3.resource('s3')
-    s3_resource.Object(bucket_name, f'tabla_{hoy}.csv').put(Body=csv_buffer.getvalue())
+    s3_resource.Object(bucket_name, f'tabla.csv').put(Body=csv_buffer.getvalue())
 
 main()

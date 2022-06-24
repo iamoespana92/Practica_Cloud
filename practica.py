@@ -6,12 +6,15 @@ import plotly.graph_objs as go
 import pandas as pd
 
 
-df = pd.read_csv('tabla_final.csv')
-df = df.sort_values("Strike")
+def get_data_from_s3():
+    df = pd.read_csv('s3://volatility-miax-8-practica-4-nacho-amo/tabla.csv')
+    df = df.sort_values("Strike")
+    print(df)
+    df_call = df[df["Tipo_Opcion"] == "call"]
+    df_put = df[df["Tipo_Opcion"] == "put"]
+    return df, df_call, df_put
 
-df_call = df[df["Tipo_Opcion"] == "call"]
-df_put = df[df["Tipo_Opcion"] == "put"]
-
+df, df_call, df_put = get_data_from_s3()
 
 app = dash.Dash() 
 app.layout = html.Div(children =[ 
