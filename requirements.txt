@@ -1,0 +1,9 @@
+webdriver-manager
+selenium
+mibian
+pandas
+scipy
+boto3 
+dash
+plotly
+s3fs
