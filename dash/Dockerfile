@@ -6,7 +6,7 @@ FROM python:3.10
 # COPY practica.py /practica.py
 
 COPY dash.py .
-COPY ../requirements.txt .
+COPY ../requirements-dash.txt .
 
 # RUN mkdir -p ~/.aws
 # COPY config ~/.aws/config
@@ -19,7 +19,7 @@ COPY ../requirements.txt .
 # RUN apk add g++
 # RUN apk add --no-cache musl-dev
 
-RUN pip install -r requirements.txt
+RUN pip install -r requirements-dash.txt
 #RUN pip3 install --no-cache-dir dash boto3 s3fs plotly 
 # Code file to execute when the docker container starts up (`entrypoint.sh`)
 ENTRYPOINT ["python", "./dash.py"]

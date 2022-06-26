@@ -15,11 +15,10 @@ env:
   AWS_REGION: us-east-1
 
 jobs:
-  # ECS
   deploy:
     name: Deploy
     runs-on: ubuntu-latest
-    environment: production
+    environment: nachoamo_aws
 
     steps:
       - name: Checkout
