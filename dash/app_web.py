@@ -2,6 +2,8 @@ import dash
 from dash import dcc, html, Input, Output
 import plotly.graph_objs as go
 import pandas as pd
+import boto3
+import s3fs
 
 
 def get_data_from_s3():
