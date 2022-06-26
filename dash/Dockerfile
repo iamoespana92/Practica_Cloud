@@ -22,5 +22,5 @@ COPY requirements-dash.txt .
 RUN pip install -r requirements-dash.txt
 #RUN pip3 install --no-cache-dir dash boto3 s3fs plotly 
 # Code file to execute when the docker container starts up (`entrypoint.sh`)
-ENTRYPOINT ["python", "./dash.py"]
+CMD ["python", "./dash.py"]
 
