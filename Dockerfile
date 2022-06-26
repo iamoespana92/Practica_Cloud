@@ -14,7 +14,7 @@ RUN apk add python3-dev
 RUN apk add gcc
 RUN apk add g++
 RUN apk add --no-cache musl-dev
-#RUN apk add pandas
+
 RUN pip3 install --no-cache-dir dash boto3 s3fs plotly pandas
 #RUN pip3 install --no-cache-dir dash boto3 s3fs plotly 
 # Code file to execute when the docker container starts up (`entrypoint.sh`)
