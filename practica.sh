@@ -10,6 +10,6 @@
 
 #pip install -r requirements.txt
 
-python practica.py
+python3 practica.py
 
 #deactivate
