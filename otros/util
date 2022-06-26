@@ -1,0 +1,5 @@
+ export PATH="/home/ec2-user/Python-3.10.4:$PATH"
+
+ /home/ec2-user/Practica_Cloud/webscrapping_script.sh
+
+ 26 21 * * *  /home/ec2-user/Practica_Cloud/webscrapping_script.sh
