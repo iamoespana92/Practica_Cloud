@@ -10,7 +10,7 @@ env:
   ECR_REPOSITORY: dash_miax8
   ECS_CLUSTER: dash_miax8_cluster
   ECS_SERVICE: dash_miax8_service
-  ECS_TASK_DEF: ./dash/dash-miax8-task-definition.json
+  ECS_TASK_DEF: ./dash/dash_miax8_task-definition.json
   ECS_CONTAINER: dash_miax8_container
   AWS_REGION: us-east-1
 
