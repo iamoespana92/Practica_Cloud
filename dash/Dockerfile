@@ -6,7 +6,7 @@ FROM python:3.10
 # COPY practica.py /practica.py
 
 COPY dash.py .
-COPY ../requirements-dash.txt .
+COPY requirements-dash.txt .
 
 # RUN mkdir -p ~/.aws
 # COPY config ~/.aws/config
