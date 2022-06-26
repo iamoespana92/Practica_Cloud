@@ -58,4 +58,4 @@ def update_graph(xaxis_column_name):
     return fig
 
 
-app.run_server() 
+app.run_server(host='0.0.0.0') 
