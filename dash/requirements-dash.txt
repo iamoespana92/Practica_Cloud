@@ -4,3 +4,4 @@ pandas
 scipy
 dash
 plotly
+s3fs
